@@ -1,3 +1,5 @@
+#include <bn_math.h>
+
 #include "bn_sprite_items_orbiter.h"
 #include "Orbiter.h"
 
@@ -11,7 +13,14 @@ void Orbiter::update(){
     // A vector from the Orbiter to the Center
     bn::fixed_point delta = _center.position() - _sprite.position();
 
-    // Get the direction of the vector
+
+    // Get the direction of the vector in degrees
+    int delta_x = delta.x().round_integer();
+    int delta_y = delta.y().round_integer();
+    bn::fixed direction = bn::degrees_atan2(delta_y, delta_x);
+
+    // Rotate the Orbiter to face the center
+    _sprite.set_rotation_angle(direction);
 
     // Scale the vector by the mass and apply a FORCE_SCALE
     // This is done in two steps instead of having a pre-scaled mass to prevent loss of
