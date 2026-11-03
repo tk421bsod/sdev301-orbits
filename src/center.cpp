@@ -14,6 +14,10 @@ bn::fixed_point Center::position() {
     return _sprite.position();
 }
 
+void Center::set_mass(bn::fixed new_mass) {
+    _mass = new_mass;
+}
+
 bn::fixed Center::mass() {
     return _mass;
 }

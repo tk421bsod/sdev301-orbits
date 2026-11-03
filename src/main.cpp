@@ -36,6 +36,14 @@ int main() {
             }
         }
 
+        if (bn::keypad::l_pressed()) {
+            center.set_mass(center.mass() - 0.01);
+        }
+
+        if (bn::keypad::r_pressed()) {
+            center.set_mass(center.mass() + 0.01);
+        }
+
         center.update();
         for(Orbiter& orbiter : orbiters) {
             orbiter.update();

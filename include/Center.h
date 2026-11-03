@@ -7,6 +7,7 @@ class Center {
         Center(bn::fixed_point starting_position, bn::fixed mass, bn::fixed speed);
         
         void update();
+        void set_mass(bn::fixed new_mass);
 
         bn::fixed_point position();
         bn::fixed mass();
