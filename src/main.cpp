@@ -13,7 +13,7 @@ static constexpr int MAX_ORBITERS = 30;
 
 // Default starting posiiton and velocity for Orbiter
 static constexpr bn::fixed_point ORBITER_START_POSIITON = {0, 0};
-static constexpr bn::fixed_point ORBITER_START_VELOCITY = {0, 5};
+static constexpr bn::fixed_point ORBITER_START_VELOCITY = {1, 5};
 
 int main() {
     bn::core::init();
@@ -37,11 +37,11 @@ int main() {
         }
 
         if (bn::keypad::l_pressed()) {
-            center.set_mass(center.mass() - 0.01);
+            center.set_mass(center.mass() - 0.001);
         }
 
         if (bn::keypad::r_pressed()) {
-            center.set_mass(center.mass() + 0.01);
+            center.set_mass(center.mass() + 0.001);
         }
 
         center.update();
