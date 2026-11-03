@@ -20,7 +20,7 @@ void Orbiter::update(){
     bn::fixed direction = bn::degrees_atan2(delta_y, delta_x);
 
     // Rotate the Orbiter to face the center
-    _sprite.set_rotation_angle(direction);
+    _sprite.set_rotation_angle(180 + direction);
 
     // Scale the vector by the mass and apply a FORCE_SCALE
     // This is done in two steps instead of having a pre-scaled mass to prevent loss of
