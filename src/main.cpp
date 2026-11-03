@@ -15,8 +15,6 @@ static constexpr int MAX_ORBITERS = 30;
 static constexpr bn::fixed_point ORBITER_START_POSIITON = {0, 0};
 static constexpr bn::fixed_point ORBITER_START_VELOCITY = {0, 5};
 
-
-
 int main() {
     bn::core::init();
 
